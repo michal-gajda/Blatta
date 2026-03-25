@@ -13,4 +13,7 @@
   <Folder Name="/tests/Application.FunctionalTests/">
     <Project Path="tests/Application.FunctionalTests/Blatta.Application.FunctionalTests.csproj" />
   </Folder>
+  <Folder Name="/tests/Application.UnitTests/">
+    <Project Path="tests/Application.UnitTests/Blatta.Application.UnitTests.csproj" />
+  </Folder>
 </Solution>

@@ -12,14 +12,16 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.5" />
     <PackageReference Include="Microsoft.Extensions.Logging" Version="10.0.5" />
     <PackageReference Include="MSTest" Version="4.0.2" />
+    <PackageReference Include="Shouldly" Version="4.3.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Using Include="Microsoft.VisualStudio.TestTools.UnitTesting" />
+    <Using Include="Shouldly" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Application\Blatta.Application.csproj" />
+    <ProjectReference Include="..\..\src\Infrastructure\Blatta.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

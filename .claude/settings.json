@@ -1,8 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(mv src/Application/Common/IEventHandle.cs src/Application/Common/IEventHandler.cs)",
-      "Bash(mv src/Application/Common/Bus.cs src/Infrastructure/Bus.cs)"
-    ]
-  }
-}
