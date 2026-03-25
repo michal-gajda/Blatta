@@ -9,9 +9,13 @@ public sealed class Program
     {
     }
 
-    public static async Task Main(string[] args)
+    public static async Task<int> Main(string[] args)
     {
-        var builder = WebApplication.CreateBuilder(args);
+        var builder = WebApplication.CreateBuilder(new WebApplicationOptions
+        {
+            Args = args,
+            ContentRootPath = AppContext.BaseDirectory,
+        });
 
         builder.Services.AddApplication();
         builder.Services.AddInfrastructure(builder.Configuration);
@@ -33,6 +37,23 @@ public sealed class Program
 
         app.MapControllers();
 
-        await app.RunAsync();
+        var logger = app.Services.GetRequiredService<ILogger<Program>>();
+
+        try
+        {
+            await app.RunAsync();
+        }
+        catch (OperationCanceledException)
+        {
+            //
+        }
+        catch (Exception exception)
+        {
+            logger.LogCritical(exception, "An unhandled exception occurred while running the application.");
+
+            return 1;
+        }
+
+        return 0;
     }
 }
